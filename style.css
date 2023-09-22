@@ -7,7 +7,7 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    /* border: 2px solid red; */
+    border: 2px solid red;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
     width: 100vw;
     height: 80vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: var(--panel-colours);
     border-bottom: 4px solid var(--panel-border-colour);
     border-left: 4px solid var(--panel-border-colour);
@@ -38,11 +38,14 @@ body {
 .main-container div.nav:hover {
     transition: 2s;
     bottom: 20vh;
+    background-color: rgb(0, 211, 70);
 }
 
 .title {
     position:relative;
+    padding-left: 10%;
     top: 90%;
+    height: 1em;
     font-size: 3rem;
     user-select: none;
     color: rgb(93, 74, 177);
@@ -66,7 +69,20 @@ body {
 }
 
 .main-container div.side-bar:hover {
-    width: 80%;
+    width: 80vw;
     background-color: orange;
     transition: 2s;
+}
+
+.main {
+    display: grid;
+    height: 100vh;
+    place-content: center;
+    align-content: center;
+}
+
+.timer {
+    font-size: 6rem;
+    width: 17vw;
+    font-family: 'Poppins', sans-serif;
 }
