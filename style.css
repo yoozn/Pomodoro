@@ -83,7 +83,31 @@ body {
 
 .timer {
     font-size: 6rem;
-    width: 17vw;
+    text-align: start;
     font-family: 'Poppins', sans-serif;
     color: white;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    width: 18vw;
+}
+
+.start {
+    flex: 1;
+    background-color: orange;
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+.start:hover {
+    transform: scale(1.05);
+    transition: .14s;
+}
+
+.start:active {
+    background-color: rgb(204, 133, 0);
+    transform: scale(.95);
 }
