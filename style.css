@@ -26,7 +26,9 @@ body {
     width: 100vw;
     height: 80vh;
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    justify-content: center;
+    align-items: center;
     background-color: var(--panel-colours);
     border-bottom: 4px solid var(--panel-border-colour);
     border-left: 4px solid var(--panel-border-colour);
@@ -35,15 +37,21 @@ body {
     transition: 2s;
 }
 
-.main-container div.nav:hover {
+.form-container {
+    width: 70%;
+    height: 70%;
+}
+
+.main-container div.nav{
     transition: 2s;
     bottom: 20vh;
     background-color: rgb(0, 211, 70);
 }
 
 .title {
-    position:relative;
-    padding-left: 10%;
+    position:absolute;
+    /* padding-left: 10%; */
+    left: 10%;
     top: 90%;
     height: 1em;
     font-size: 3rem;
