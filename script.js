@@ -4,6 +4,10 @@ let button = document.querySelector(".start");
 let addBlockContainer = document.querySelector(".add-block");
 let addBlockButton = document.querySelector(".add");
 
+let addButtons;
+
+let mouseover = false;
+
 let minutes = 2;
 let seconds = 30;
 let pause = true;
@@ -47,9 +51,39 @@ if (seconds == 0) {
 
 addBlockButton.addEventListener("mouseover", () => {
     addBlockButton.classList.add("invisible");
-    let addShort = document.createElement('button');
+    mouseover =true;
+    addBlockButton.addEventListener('transitionend', () => {
+        if (mouseover) {
+            if (!document.querySelector(".add-buttons")) {
+                addButtons = document.createElement('div');
+                addButtons.classList.add("add-buttons");
+                addButtons.classList.add("invisible-add-buttons");
+                addBlockContainer.appendChild(addButtons);
+                let addShort = document.createElement('button');
+                addShort.classList.add("add-short");
+                addButtons.append(addShort);
+                let addPom = document.createElement('button');
+                addPom.classList.add("add-pom");
+                addButtons.append(addPom);
+                let addLong = document.createElement('button');
+                addLong.classList.add("add-long");
+                addButtons.append(addLong);
+                setInterval(() => {
+                    addButtons.classList.remove("invisible-add-buttons");
+                }, 50)
+            }
+        }
+    }, {once: true});
+
 })
 
 addBlockContainer.addEventListener("mouseleave", () => {
     addBlockButton.classList.remove("invisible");
+    mouseover = false;
+    if (addButtons) {
+        addButtons.classList.add("invisible");
+        addButtons.addEventListener('transitionend' , () => {
+            addButtons.remove();
+        }, {once: true})
+    }
 })

@@ -116,7 +116,15 @@ body {
 .invisible {
     transform: rotate(90deg) scale(.2);
     opacity: 0;
+    transition: .6s;
+}
 
+.invisible-add-buttons {
+    transform: scale(0);
+    opacity: 0;
+    transition: .4s;
+    height: 100%;
+    width: 100%;
 }
 
 .main-container div:hover {
@@ -125,6 +133,8 @@ body {
 }
 
 .add-buttons {
+    transition: .4s;
+    transform:scale(1);
     position: absolute;
     display: flex;
     height: 100%;
