@@ -1,6 +1,9 @@
 let timer = document.querySelector(".timer");
 let button = document.querySelector(".start");
 
+let addBlockContainer = document.querySelector(".add-block");
+let addBlockButton = document.querySelector(".add");
+
 let minutes = 2;
 let seconds = 30;
 let pause = true;
@@ -41,3 +44,12 @@ if (seconds == 0) {
 }
 
 }, 1000)
+
+addBlockButton.addEventListener("mouseover", () => {
+    addBlockButton.classList.add("invisible");
+    let addShort = document.createElement('button');
+})
+
+addBlockContainer.addEventListener("mouseleave", () => {
+    addBlockButton.classList.remove("invisible");
+})
