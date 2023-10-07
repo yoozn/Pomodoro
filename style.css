@@ -113,19 +113,6 @@ body {
     transition: .5s;
 }
 
-.invisible {
-    transform: rotate(90deg) scale(.2);
-    opacity: 0;
-    transition: .6s;
-}
-
-.invisible-add-buttons {
-    transform: scale(0);
-    opacity: 0;
-    transition: .4s;
-    height: 100%;
-    width: 100%;
-}
 
 .main-container div:hover {
     border-color: white;
@@ -159,6 +146,19 @@ body {
     /* left: 66%; */
 }
 
+.invisible {
+    transform: rotate(90deg) scale(.2);
+    opacity: 0;
+    transition: .4s;
+}
+
+.invisible-add-buttons {
+    transform: scale(.2);
+    opacity: 0;
+    transition: .4s;
+    /* height: 100%;
+    width: 100%; */
+}
 
 .main {
     display: grid;

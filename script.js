@@ -68,9 +68,10 @@ addBlockButton.addEventListener("mouseover", () => {
                 let addLong = document.createElement('button');
                 addLong.classList.add("add-long");
                 addButtons.append(addLong);
-                setInterval(() => {
+                // addButtons.classList.remove("invisible-add-buttons");
+                setTimeout(() => {
                     addButtons.classList.remove("invisible-add-buttons");
-                }, 50)
+                }, 50);
             }
         }
     }, {once: true});
@@ -78,12 +79,12 @@ addBlockButton.addEventListener("mouseover", () => {
 })
 
 addBlockContainer.addEventListener("mouseleave", () => {
-    addBlockButton.classList.remove("invisible");
     mouseover = false;
-    if (addButtons) {
-        addButtons.classList.add("invisible");
+    if (addButtons == document.querySelector(".add-buttons")) {
+        addButtons.classList.add("invisible-add-buttons");
         addButtons.addEventListener('transitionend' , () => {
             addButtons.remove();
+            addBlockButton.classList.remove("invisible");
         }, {once: true})
     }
 })
